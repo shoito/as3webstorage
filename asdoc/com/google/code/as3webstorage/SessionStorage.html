@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!-- saved from url=(0014)about:internet --><html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="../../../../style.css" type="text/css" media="screen"><link rel="stylesheet" href="../../../../print.css" type="text/css" media="print"><link rel="stylesheet" href="../../../../override.css" type="text/css"><meta name="keywords" content="SessionStorage,com.google.code.as3webstorage.SessionStorage,addStorageEventListener,addStorageEventListener,avaliable,avaliable,clear,clear,getItem,getItem,key,key,length,length,removeItem,removeItem,setItem,setItem"><title>com.google.code.as3webstorage.SessionStorage</title></head><body><script language="javascript" type="text/javascript" src="../../../../asdoc.js"></script><script language="javascript" type="text/javascript" src="../../../../help.js"></script><script language="javascript" type="text/javascript" src="../../../../cookies.js"></script><script language="javascript" type="text/javascript"><!--
+				asdocTitle = 'SessionStorage - API Documentation';
+				var baseRef = '../../../../';
+				window.onload = configPage;
+			--></script>
+<script type="text/javascript">
+			scrollToNameAnchor();
+		</script><table class="titleTable" cellpadding="0" cellspacing="0" id="titleTable" style="display:none"><tr><td class="titleTableTitle" align="left">API Documentation</td><td class="titleTableTopNav" align="right"><a href="../../../../package-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Packages</a>&nbsp;|&nbsp;<a href="../../../../class-summary.html" onclick="loadClassListFrame('../../../../all-classes.html')">All Classes</a>&nbsp;|&nbsp;<a href="../../../../all-index-A.html" onclick="loadClassListFrame('../../../../index-list.html')">Index</a>&nbsp;|&nbsp;<a id="framesLink1" href="../../../../index.html?com/google/code/as3webstorage/SessionStorage.html&amp;com/google/code/as3webstorage/class-list.html">Frames</a><a id="noFramesLink1" style="display:none" href="" onclick="parent.location=document.location"> No Frames </a></td><td class="titleTableLogo" align="right" rowspan="3"><img src="../../../../images/logo.jpg" class="logoImage" alt=" Adobe Logo " title=" Adobe Logo "></td></tr><tr class="titleTableRow2"><td class="titleTableSubTitle" id="subTitle" align="left">SessionStorage</td><td class="titleTableSubNav" id="subNav" align="right"><a href="#methodSummary">Methods</a></td></tr><tr class="titleTableRow3"><td colspan="3">&nbsp;</td></tr></table><script language="javascript" type="text/javascript" xml:space="preserve">
+				<!--
+				
+					if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("SessionStorage"); titleBar_setSubNav(false,false,false,false,false,false,false,false,true,false,false	,false,false,false,false,false);}	
+				-->
+			</script><div xmlns:fn="http://www.w3.org/2005/xpath-functions" class="MainContent"><table class="classHeaderTable" cellpadding="0" cellspacing="0"><tr><td class="classHeaderTableLabel">Package</td><td><a href="package-detail.html" onclick="javascript:loadClassListFrame('class-list.html')">com.google.code.as3webstorage</a></td></tr><tr><td class="classHeaderTableLabel">Class</td><td class="classSignature">public  class  SessionStorage</td></tr><tr><td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">SessionStorage  <img src="../../../../images/inherit-arrow.gif" title="Inheritance" alt="Inheritance" class="inheritArrow"> Object</td></tr></table><p></p><p></p><p></p>
+	 ActionScriptからWeb Storage API(sessionStorage)を簡単に利用できるラッパーユーティリティです.
+	 
+	 <p>以下のインターフェース仕様に従ってラッパーを提供していますが, 一部独自に追加しているものがあります.</p>
+	              <p>Ref. W3C Web Storage - <a href="http://dev.w3.org/html5/webstorage/#storage-0" target="">4.1 The Storage interface</a>
+               </p>
+	              <pre>
+	 interface Storage {
+	   readonly attribute unsigned long length;
+	   getter DOMString key(in unsigned long index);
+	   getter any getItem(in DOMString key);
+	   setter creator void setItem(in DOMString key, in any data);
+	   deleter void removeItem(in DOMString key);
+	   void clear();
+	 };</pre>
+	 
+	           <p></p><br/><hr></div><a name="methodSummary"></a><div class="summarySection"><div class="summaryTableTitle">Public Methods </div><table cellspacing="0" cellpadding="3" class="summaryTable " id="summaryTableMethod"><tr><th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined By</th></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#addStorageEventListener()" class="signatureLink">addStorageEventListener</a>(func:Function, useCapture:Boolean = false):void</div><div class="summaryTableDescription">[static] 
+		 storage eventのリスナーを追加します.</div></td><td class="summaryTableOwnerCol">SessionStorage</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#avaliable()" class="signatureLink">avaliable</a>():Boolean</div><div class="summaryTableDescription">[static] 
+		 as3webstorageが実行中のブラウザで機能するかどうか返します.</div></td><td class="summaryTableOwnerCol">SessionStorage</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#clear()" class="signatureLink">clear</a>():void</div><div class="summaryTableDescription">[static] 
+		 Storageのデータを全て消去します.</div></td><td class="summaryTableOwnerCol">SessionStorage</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#getItem()" class="signatureLink">getItem</a>(key:String):*</div><div class="summaryTableDescription">[static] 
+		 キーに対するデータを返します.</div></td><td class="summaryTableOwnerCol">SessionStorage</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#key()" class="signatureLink">key</a>(index:uint):*</div><div class="summaryTableDescription">[static] 
+		 index番目のデータのキーを返します.</div></td><td class="summaryTableOwnerCol">SessionStorage</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#length()" class="signatureLink">length</a>():uint</div><div class="summaryTableDescription">[static] 
+		 Storageに格納されているデータの数を返します.</div></td><td class="summaryTableOwnerCol">SessionStorage</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#removeItem()" class="signatureLink">removeItem</a>(key:String):void</div><div class="summaryTableDescription">[static] 
+		 Storageからキーに対するデータを削除します.</div></td><td class="summaryTableOwnerCol">SessionStorage</td></tr><tr class=""><td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><div class="summarySignature"><a href="#setItem()" class="signatureLink">setItem</a>(key:String, data:*):void</div><div class="summaryTableDescription">[static] 
+		 Storageにデータをセットします.</div></td><td class="summaryTableOwnerCol">SessionStorage</td></tr></table></div><script language="javascript" type="text/javascript"><!--
+										showHideInherited();
+										--></script><div class="MainContent"><a name="methodDetail"></a><div class="detailSectionHeader">Method Detail</div><a name="addStorageEventListener()"></a><a name="addStorageEventListener(Function,Boolean)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">addStorageEventListener</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td></tr></table><div class="detailBody"><code> public static function addStorageEventListener(func:Function, useCapture:Boolean = false):void</code><p></p><p></p><p>
+		 storage eventのリスナーを追加します.
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">func</span>:Function</code> &mdash; JavaScript側のwindowオブジェクトからstorage eventが発行された場合に, 実行される関数
+		 
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">useCapture</span>:Boolean</code> (default = <code>false</code>)<code></code></td></tr></table></p><br/><span class="label"> Example </span><br/><div class="detailBody">Storageのデータが追加/削除された際に, reloadData()関数を呼ぶようにします.
+		 <div class="listing"><pre>
+         SessionStorage.addStorageEventListener(reloadData);
+         ...
+         private function reloadData(event:null):void
+         {
+           ...
+         }
+         </pre></div>
+		 </div></div><a name="avaliable()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">avaliable</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function avaliable():Boolean</code><p></p><p></p><p>
+		 as3webstorageが実行中のブラウザで機能するかどうか返します.
+		 
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>Boolean</code> &mdash; as3webstorageが機能する場合は<code>true</code>, 機能しない場合は<code>false</code>
+		 </td></tr></table></div><a name="clear()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">clear</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function clear():void</code><p></p><p></p><p>
+		 Storageのデータを全て消去します.
+		 </p></div><a name="getItem()"></a><a name="getItem(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">getItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function getItem(key:String):*</code><p></p><p></p><p>
+		 キーに対するデータを返します.
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">key</span>:String</code> &mdash; キー
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>*</code> &mdash; キーに対するアイテム
+		 </td></tr></table></div><a name="key()"></a><a name="key(uint)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">key</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function key(index:uint):*</code><p></p><p></p><p>
+		 index番目のデータのキーを返します.
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">index</span>:uint</code> &mdash; インデックス
+		 </td></tr></table></p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>*</code> &mdash; キー
+		 </td></tr></table></div><a name="length()"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">length</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function length():uint</code><p></p><p></p><p>
+		 Storageに格納されているデータの数を返します.
+		 
+		 </p><p></p><span class="label">Returns</span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20"></td><td><code>uint</code> &mdash; Storageに格納されているアイテムの数 
+		 </td></tr></table></div><a name="removeItem()"></a><a name="removeItem(String)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">removeItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function removeItem(key:String):void</code><p></p><p></p><p>
+		 Storageからキーに対するデータを削除します.
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">key</span>:String</code> &mdash; データに対するキー
+		 </td></tr></table></p></div><a name="setItem()"></a><a name="setItem(String,any)"></a><table class="detailHeader" cellpadding="0" cellspacing="0"><tr><td class="detailHeaderName">setItem</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td></tr></table><div class="detailBody"><code> public static function setItem(key:String, data:*):void</code><p></p><p></p><p>
+		 Storageにデータをセットします.
+		 
+		 </p><p><span class="label"> Parameters </span><table cellpadding="0" cellspacing="0" border="0"><tr><td width="20px"></td><td><code><span class="label">key</span>:String</code> &mdash; データに対するキー
+		 </td></tr><tr><td class="paramSpacer">&nbsp;</td></tr><tr><td width="20px"></td><td><code><span class="label">data</span>:*</code> &mdash; データ
+		 </td></tr></table></p></div><br/><br/><hr><br/><p></p><center class="copyright"><footer></footer><br/>Wed Jun 9 2010, 12:27 AM +09:00  </center></div></body></html><!--<br/>Wed Jun 9 2010, 12:27 AM +09:00  -->

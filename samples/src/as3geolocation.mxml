@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx" 
+			   xmlns:maps="com.google.maps.*" 
+			   minWidth="955" minHeight="600"
+			   applicationComplete="onApplicationComplete(event)" viewSourceURL="srcview/index.html">
+	<fx:Script>
+		<![CDATA[
+			import com.google.code.as3geolocation.Geolocation;
+			import com.google.maps.LatLng;
+			import com.google.maps.Map;
+			import com.google.maps.MapEvent;
+			import com.google.maps.MapType;
+			import com.google.maps.overlays.Marker;
+			import com.google.maps.overlays.MarkerOptions;
+			import com.google.maps.styles.FillStyle;
+			import com.google.maps.styles.StrokeStyle;
+			
+			import mx.controls.Alert;
+			import mx.events.FlexEvent;
+			
+			private function onApplicationComplete(event:FlexEvent):void
+			{
+				if (!Geolocation.available())
+				{
+					Alert.show("ブラウザがExternal Interface API、またはGeolocation APIをサポートしていません。Chrome, Firefoxなど両機能をサポートするブラウザをご利用ください。", "確認");
+					return;
+				}
+			}
+
+			private function onMapReady(event:Event):void {
+				setPosition({
+					coords:{
+						latitude: 36.0648657,
+						longitude: 136.2147612
+					}
+				});
+			}
+			
+			protected function getPositionButton_clickHandler(event:MouseEvent):void
+			{
+				Geolocation.getCurrentPosition(setPosition);
+			}
+			
+			private function setPosition(position:*):void
+			{
+				var latitude:Number = position.coords.latitude;
+				var longitude:Number = position.coords.longitude;
+				var altitude:Number = position.coords.altitude;
+				var accuracy:Number = position.coords.accuracy;
+				var altitudeAccuracy:Number = position.coords.altitudeAccuracy;
+				var heading:Number = position.coords.heading;
+				var speed:Number = position.coords.speed;
+				
+				map.clearOverlays();
+				map.setCenter(new LatLng(latitude, longitude), 14, MapType.NORMAL_MAP_TYPE);
+				var markerA:Marker = new Marker(
+					new LatLng(latitude, longitude),
+					new MarkerOptions({
+						radius: 12,
+						hasShadow: true
+					})
+				);
+				map.addOverlay(markerA);
+				
+				latLngText.text = "latitude: " + latitude + "\r"
+					+ "longitude: " + longitude + "\r"
+					+ "altitude: " + altitude + "\r"
+					+ "accuracy: " + accuracy + "\r"
+					+ "altitudeAccuracy: " + altitudeAccuracy + "\r"
+					+ "heading: " + heading + "\r"
+					+ "speed: " + speed;
+			}
+		]]>
+	</fx:Script>
+	<maps:Map id="map" 
+			  mapevent_mapready="onMapReady(event)"
+			  width="100%" height="100%" 
+			  key="ABQIAAAAk2WIIRljTftjpYZECLawyxRWTAkRKJS7h1XjKaOTqACHuw1n0BTFWfuNRQMOrL1scYHAvOkQAii_lQ"/>
+	<s:Button x="15" y="15" height="50" label="getCurrentPosition" id="getPositionButton" click="getPositionButton_clickHandler(event)"/>
+	<s:TextArea id="latLngText" x="15" y="80" width="240" alpha="0.6"/>
+</s:Application>
